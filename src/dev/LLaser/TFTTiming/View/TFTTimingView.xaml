@@ -1,0 +1,476 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - TFTTimingView.xaml
+    // Created at 2013-4-25
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<UserControl x:Class="LLaser.View.TFTTimingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:l="clr-namespace:LLaser"
+             xmlns:controls="clr-namespace:LLaser.WPF.Controls;assembly=LLaser.WPF.Controls"
+             xmlns:extkcontrols="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:common="clr-namespace:LLaser.Common;assembly=LLaser.Common"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             MinHeight="570" MinWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="TFTDrawing.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="PolarityComboboxItemStyle" TargetType="ComboBoxItem">
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+
+            <DataTemplate x:Key="PolarityComboboxItemTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border Background="LightGray">
+                        <Path Width="30" Height="30" Data="{Binding PathData}" Stroke="Red" Margin="3"/>
+                    </Border>
+                    <TextBlock Grid.Column="1" Text="{Binding Display}" VerticalAlignment="Center" Margin="15,4,0,4"/>
+                </Grid>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" MinWidth="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox x:Name="gpTFTSetting" Grid.RowSpan="2" Header="{Binding [lblTFTSetting], Source={StaticResource lang}, Mode=OneWay}"
+                  Margin="4">
+            <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+
+                    <!-- DCK -->
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="lblDCK" Text="{Binding [lblDCK], Source={StaticResource lang}, Mode=OneWay}"
+                               Margin="4" VerticalAlignment="Center"/>
+                        <extkcontrols:CalculatorUpDown Grid.Column="1" x:Name="txtDCK" Margin="4"
+                                                   Minimum="0.000001" Maximum="999999.999999" Increment="0.001"
+                                                   Value="{Binding TFTTimingModel.DCK, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="2" x:Name="lblDCKUnit"
+                               Text="{Binding [lblDCKUnit], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+
+                        <!-- DCKPolarity -->
+                        <TextBlock Grid.Row="1" x:Name="lblDCKPolarity" VerticalAlignment="Center"
+                                   Text="{Binding [lblDCKPolarity], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                        <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cmbDCKPolarity" Margin="4" Background="Transparent"
+                                  ItemsSource="{Binding DCKPolarities}" SelectedValuePath="Polarity"
+                                  SelectedValue="{Binding TFTTimingModel.DCKPolarity}"
+                                  ItemTemplate="{StaticResource PolarityComboboxItemTemplate}" 
+                                  ItemContainerStyle="{StaticResource PolarityComboboxItemStyle}"/>
+                    </Grid>
+
+                    <!-- H sync -->
+                    <GroupBox x:Name="gpHsync"
+                          Header="{Binding [lblHsyncSetting], Source={StaticResource lang}, Mode=OneWay}" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <!-- H sync width -->
+                            <TextBlock x:Name="lblHSyncWidth" VerticalAlignment="Center"
+                                   Text="{Binding [lblSyncWidth], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Column="1" x:Name="txtHSyncWidth" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.HSyncWidth, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" x:Name="lblHSyncWidthUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- H back porch -->
+                            <TextBlock Grid.Row="1" x:Name="lblHBackPorch" VerticalAlignment="Center"
+                                   Text="{Binding [lblBackPorch], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="1" Grid.Column="1" x:Name="txtHBackPorch" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.HBackPorch, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="lblHBackPorchUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- H valid -->
+                            <TextBlock Grid.Row="2" x:Name="lblHValid" VerticalAlignment="Center"
+                                   Text="{Binding [lblValid], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="2" Grid.Column="1" x:Name="txtHValid" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.HValid, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="lblHValidUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- H front porch -->
+                            <TextBlock Grid.Row="3" x:Name="lblHFrontPorch" VerticalAlignment="Center"
+                                   Text="{Binding [lblFrontPorch], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="3" Grid.Column="1" x:Name="txtHFrontPorch" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.HFrontPorch, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="lblHFrontPorchUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- H polarity -->
+                            <TextBlock Grid.Row="4" x:Name="lblHPolarity" VerticalAlignment="Center"
+                                   Text="{Binding [lblHPolarity], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cmbHPolarity" Margin="4" Background="Transparent"
+                                  ItemsSource="{Binding Polarities}" SelectedValuePath="Polarity"
+                                  SelectedValue="{Binding TFTTimingModel.HPolarity}"
+                                  ItemTemplate="{StaticResource PolarityComboboxItemTemplate}" 
+                                  ItemContainerStyle="{StaticResource PolarityComboboxItemStyle}"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- V sync -->
+                    <GroupBox x:Name="gpVsync"
+                          Header="{Binding [lblVsyncSetting], Source={StaticResource lang}, Mode=OneWay}" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <!-- V sync width -->
+                            <TextBlock x:Name="lblVSyncWidth" VerticalAlignment="Center"
+                                   Text="{Binding [lblSyncWidth], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Column="1" x:Name="txtVSyncWidth" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.VSyncWidth, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" x:Name="lblVSyncWidthUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblVSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- V back porch -->
+                            <TextBlock Grid.Row="1" x:Name="lblVBackPorch" VerticalAlignment="Center"
+                                   Text="{Binding [lblBackPorch], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="1" Grid.Column="1" x:Name="txtVBackPorch" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.VBackPorch, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="lblVBackPorchUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblVSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- V valid -->
+                            <TextBlock Grid.Row="2" x:Name="lblVValid" VerticalAlignment="Center"
+                                   Text="{Binding [lblValid], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="2" Grid.Column="1" x:Name="txtVValid" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.VValid, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="lblVValidUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblVSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- V front porch -->
+                            <TextBlock Grid.Row="3" x:Name="lblVFrontPorch" VerticalAlignment="Center"
+                                   Text="{Binding [lblFrontPorch], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <extkcontrols:CalculatorUpDown Grid.Row="3" Grid.Column="1" x:Name="txtVFrontPorch" Margin="4"
+                                                       Minimum="1" Maximum="999999" Increment="1"
+                                                       Value="{Binding TFTTimingModel.VFrontPorch, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="lblVFrontPorchUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblVSyncUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+
+                            <!-- V polarity -->
+                            <TextBlock Grid.Row="4" x:Name="lblVPolarity" VerticalAlignment="Center"
+                                   Text="{Binding [lblVPolarity], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                            <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cmbVPolarity" Margin="4" Background="Transparent"
+                                  ItemsSource="{Binding Polarities}" SelectedValuePath="Polarity"
+                                  SelectedValue="{Binding TFTTimingModel.VPolarity}"
+                                  ItemTemplate="{StaticResource PolarityComboboxItemTemplate}" 
+                                  ItemContainerStyle="{StaticResource PolarityComboboxItemStyle}" />
+                        </Grid>
+                    </GroupBox>
+
+                    <Grid Margin="3,0,3,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Hsy-Vsy delay -->
+                        <TextBlock x:Name="lblHVDelay" VerticalAlignment="Center"
+                               Text="{Binding [lblHVDelay], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+                        <extkcontrols:CalculatorUpDown Grid.Column="1" x:Name="txtHVDelay" Margin="4"
+                                                   Minimum="-999999" Maximum="999999" Increment="1"
+                                                   Value="{Binding TFTTimingModel.HVDelay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="2" x:Name="lblHVDelayUnit" VerticalAlignment="Center"
+                               Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+
+
+                        <!-- HEN Polarity -->
+                        <TextBlock Grid.Row="1" x:Name="lblHENPolarity" VerticalAlignment="Center"
+                               Text="{Binding [lblHENPolarity], Source={StaticResource lang}, Mode=OneWay}" Margin="4" />
+                        <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cmbHENPolarity" Margin="4" Background="Transparent"
+                              ItemsSource="{Binding Polarities}" SelectedValuePath="Polarity"
+                              SelectedValue="{Binding TFTTimingModel.HENPolarity}"
+                              ItemTemplate="{StaticResource PolarityComboboxItemTemplate}" 
+                              ItemContainerStyle="{StaticResource PolarityComboboxItemStyle}" />
+
+                        <!-- DotClock polarity -->
+                        <TextBlock Grid.Row="2" x:Name="lblDataBlankPolarity" VerticalAlignment="Center"
+                                   Text="{Binding [lblDataBlankPolarity], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                        <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="cmbDataBlankPolarity" Margin="4" Background="Transparent"
+                                  ItemsSource="{Binding DataPolarities}" SelectedValuePath="Polarity"
+                                  SelectedValue="{Binding TFTTimingModel.DataBlankPolarity}"
+                                  ItemTemplate="{StaticResource PolarityComboboxItemTemplate}" 
+                                  ItemContainerStyle="{StaticResource PolarityComboboxItemStyle}"/>
+                    </Grid>
+
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
+
+        <!-- preview -->
+        <Border Grid.Column="1" Background="Black" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="4"
+                UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <controls:ImagePreview UseLayoutRounding="True" SnapsToDevicePixels="True"
+                                   SaveButtonName="{Binding [btnSaveImg], Source={StaticResource lang}, Mode=OneWay}"
+                                   FullButtonName="{Binding [btnFullScreen], Source={StaticResource lang}, Mode=OneWay}">
+                <controls:ImagePreview.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="{Binding [menuCopyImg], Source={StaticResource lang}, Mode=OneWay}"
+                                  Command="{Binding CopyImageCommand}"
+                                  CommandParameter="{Binding PlacementTarget, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/LLaser;component/Image/image_copy.png" Height="16" Width="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="{Binding [menuSaveImg], Source={StaticResource lang}, Mode=OneWay}"
+                                  InputGestureText="{Binding [menuSaveImgGesture], Source={StaticResource lang}, Mode=OneWay}"
+                                  Command="{Binding SaveImageCommand}"
+                                  CommandParameter="{Binding PlacementTarget, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/LLaser;component/Image/image_save.png" Height="16" Width="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="{Binding [menuFullScreen], Source={StaticResource lang}, Mode=OneWay}"
+                                  InputGestureText="{Binding [menuFullScreenGesture], Source={StaticResource lang}, Mode=OneWay}"
+                                  Command="{Binding FullScreenCommand}"
+                                  CommandParameter="{Binding PlacementTarget, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/LLaser;component/Image/fullscreen.png" Height="16" Width="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </controls:ImagePreview.ContextMenu>
+                <Grid Margin="4" Background="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- remarks -->
+                    <StackPanel Grid.Row="9" Grid.ColumnSpan="2" TextElement.FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextElement.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextElement.Foreground>
+                        <TextBlock>
+                            <TextBlock.Inlines>
+                                <Run Text=">>"/>
+                                <Run Text="{Binding [lblTFTPreviewRemark], Source={StaticResource lang}, Mode=OneWay}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <!-- labels -->
+                    <TextBlock Grid.Row="0" Text="{Binding [lblHSY], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="1" Text="{Binding [lblDCLK], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="2" Text="{Binding [lblDS], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="3" Text="{Binding [lblHEN], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+
+                    <TextBlock Grid.Row="5" Text="{Binding [lblVSY], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="6" Text="{Binding [lblHSY], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="7" Text="{Binding [lblDS], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Grid.Row="8" Text="{Binding [lblHEN], Source={StaticResource lang}, Mode=OneWay}"
+                               VerticalAlignment="Center"
+                               FontSize="{Binding Settings[APP_TEXT_SIZE], Source={x:Static common:AppSettings.Instance}}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding Settings[APP_TEXT_COLOR], Source={x:Static common:AppSettings.Instance}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+
+                    <!-- drawings -->
+                    <Rectangle Grid.Column="1" Grid.Row="0" Fill="{StaticResource dwHSY}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="1" Fill="{StaticResource dwDCLK}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="2" Fill="{StaticResource dwDS}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="3" Fill="{StaticResource dwHEN}" Margin="5,0,5,0" />
+
+                    <Rectangle Grid.Column="1" Grid.Row="5" Fill="{StaticResource dwVSY}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="6" Fill="{StaticResource dwVHSY}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="7" Fill="{StaticResource dwVDS}" Margin="5,0,5,0" />
+                    <Rectangle Grid.Column="1" Grid.Row="8" Fill="{StaticResource dwVHEN}" Margin="5,0,5,0" />
+                </Grid>
+            </controls:ImagePreview>
+        </Border>
+
+
+        <!-- result -->
+        <GroupBox Grid.Column="1" Grid.Row="1"
+                          Header="{Binding [lblResult], Source={StaticResource lang}, Mode=OneWay}" Margin="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="lblResultPeriod" VerticalAlignment="Center"
+                                   Text="{Binding [lblResultPeriod], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+                <TextBox Grid.Column="1" x:Name="txtResultPeriod" Margin="4" IsReadOnly="True"
+                                 Background="LightGray" BorderThickness="0" HorizontalContentAlignment="Right"
+                                 Text="{Binding TFTTimingModel.Period, Mode=OneWay, StringFormat={}{0:#.##}}" />
+                <TextBlock Grid.Column="2" x:Name="lblResultPeriodUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblResultPeriodUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="5,5,10,5" />
+
+                <!-- Ver_Time -->
+                <TextBlock Grid.Column="3" x:Name="lblRresultVerTime" VerticalAlignment="Center"
+                                   Text="{Binding [lblRresultVerTime], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="10,5,5,5" />
+                <TextBox Grid.Column="4" x:Name="txtRresultVerTime" Margin="4" IsReadOnly="True"
+                                 Background="LightGray" BorderThickness="0" HorizontalContentAlignment="Right"
+                                 Text="{Binding TFTTimingModel.VerTime, Mode=OneWay, StringFormat={}{0:#.##}}" />
+                <TextBlock Grid.Column="5" x:Name="lblRresultVerTimeUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblRresultVerTimeUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="5,5,10,5" />
+
+                <!-- Fra_Time -->
+                <TextBlock Grid.Column="6" x:Name="lblResultFraTime" VerticalAlignment="Center"
+                                   Text="{Binding [lblResultFraTime], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="10,5,5,5" />
+                <TextBox Grid.Column="7" x:Name="txtResultFraTime" Margin="4" IsReadOnly="True"
+                                 Background="LightGray" BorderThickness="0" HorizontalContentAlignment="Right"
+                                 Text="{Binding TFTTimingModel.FraTime, Mode=OneWay, StringFormat={}{0:#.##}}" />
+                <TextBlock Grid.Column="8" x:Name="lblResultFraTimeUnit" VerticalAlignment="Center"
+                                   Text="{Binding [lblResultFraTimeUnit], Source={StaticResource lang}, Mode=OneWay}"
+                                   Margin="4" />
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

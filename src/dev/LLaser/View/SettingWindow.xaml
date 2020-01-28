@@ -1,0 +1,170 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - SettingWindow.xaml
+    // Created at 2013-6-25
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<Window x:Class="LLaser.View.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="{Binding [lblSettingWindowTitle], Source={StaticResource lang}, Mode=OneWay}" Height="320" SizeToContent="Width"
+        Icon="pack://application:,,,/LLaser;component/Image/perference.png" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        UseLayoutRounding="True" SnapsToDevicePixels="True" ShowInTaskbar="False" Topmost="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding [lblSettingWindowCurrentLanaguage], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+            <ComboBox Grid.Column="1" VerticalAlignment="Center" Margin="4" ItemsSource="{Binding SupportLanguages}"
+                      SelectedValuePath="Value" DisplayMemberPath="Key" SelectedValue="{Binding Language}"/>
+        </Grid>
+
+        <GroupBox Grid.ColumnSpan="2" Header="{Binding [lblSettingWindowDiagramSetting], Source={StaticResource lang}, Mode=OneWay}" Grid.Row="1" Margin="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{Binding [lblSettingWindowFontSize], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:DoubleUpDown Minimum="9" Maximum="20" Grid.Column="1" VerticalAlignment="Center" Margin="4"
+                                   Value="{Binding TextSize}" Increment="1"/>
+
+                <TextBlock Grid.Row="1" Text="{Binding [lblSettingWindowTextColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="1" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Center" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding TextColor}"/>
+
+                <TextBlock Grid.Row="2" Text="{Binding [lblSettingWindowHighlightTextColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="2" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Center" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding TextHighlightColor}"/>
+
+                <TextBlock Grid.Row="3" Text="{Binding [lblSettingWindowMarkTextColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="3" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Center" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding ValueTextColor}"/>
+
+                <TextBlock Grid.Row="4" Text="{Binding [lblSettingWindowSignalLineColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="4" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Center" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding SignalColor}"/>
+
+                <TextBlock Grid.Row="5" Text="{Binding [lblSettingWindowHighlightSignalLineColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="5" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Center" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding SignalHighlightColor}"/>
+
+                <TextBlock Grid.Row="6" Text="{Binding [lblSettingWindowMarkLineColor], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Top" Margin="4"/>
+                <xctk:ColorPicker Grid.Row="6" Grid.Column="1" Width="90"
+                                  DisplayColorAndName="True" VerticalAlignment="Top" Margin="4,4,4,0"
+                                  ShowStandardColors="False" ShowAvailableColors="True" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                  SelectedColor="{Binding LineColor}"/>
+
+                <Border Grid.Column="2" Grid.RowSpan="7" CornerRadius="5" Background="Black" Margin="4" Width="260">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <VisualBrush>
+                                <VisualBrush.Visual>
+                                    <Canvas Width="260" Height="180" Background="Transparent" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                                        <Path StrokeThickness="2"
+                                              Data="M60,135L107,135L113,85L114,85M206,135L207,135L213,85L257,85">
+                                            <Path.Stroke>
+                                                <SolidColorBrush Color="{Binding SignalColor, Mode=OneWay}"/>
+                                            </Path.Stroke>
+                                        </Path>
+                                        <Path StrokeThickness="2" Data="M113,85L157,85L163,135L207,135">
+                                            <Path.Stroke>
+                                                <SolidColorBrush Color="{Binding SignalHighlightColor, Mode=OneWay}"/>
+                                            </Path.Stroke>
+                                        </Path>
+                                        <Path Data="M111.5,125L111.5,30 M211.5,125L211.5,30
+                                                    M111.5,50L211.5,50 M121.5,47L111.5,50L121.5,53 M201.5,47L211.5,50L201.5,53">
+                                            <Path.Stroke>
+                                                <SolidColorBrush Color="{Binding LineColor, Mode=OneWay}"/>
+                                            </Path.Stroke>
+                                        </Path>
+
+                                        <TextBlock Canvas.Left="125" Canvas.Top="30" FontSize="{Binding TextSize, Mode=OneWay}">
+                                            <TextBlock.Foreground>
+                                                <SolidColorBrush Color="{Binding TextColor, Mode=OneWay}"/>
+                                            </TextBlock.Foreground>
+                                            <TextBlock.Inlines>
+                                                <Run Text="{Binding [lblFreq], Source={StaticResource lang}, Mode=OneWay}"/>
+                                                <Run Text="30.03">
+                                                    <Run.Foreground>
+                                                        <SolidColorBrush Color="{Binding ValueTextColor, Mode=OneWay}"/>
+                                                    </Run.Foreground>
+                                                </Run>
+                                                <Run Text="{Binding [lblResultPeriodUnit], Source={StaticResource lang}, Mode=OneWay}"/>
+                                            </TextBlock.Inlines>
+                                        </TextBlock>
+
+                                        <TextBlock Canvas.Left="20" Canvas.Top="105" FontSize="{Binding TextSize, Mode=OneWay}"
+                                                   Text="{Binding [lblHSyncUnit], Source={StaticResource lang}, Mode=OneWay}">
+                                            <TextBlock.Foreground>
+                                                <SolidColorBrush Color="{Binding TextColor, Mode=OneWay}"/>
+                                            </TextBlock.Foreground>
+                                        </TextBlock>
+                                        <TextBlock Canvas.Left="4" Canvas.Top="2" FontSize="{Binding TextSize, Mode=OneWay}"
+                                                   Text="{Binding [lblSettingWindowDiagramPreviewRemark], Source={StaticResource lang}, Mode=OneWay}">
+                                            <TextBlock.Foreground>
+                                                <SolidColorBrush Color="{Binding TextHighlightColor, Mode=OneWay}"/>
+                                            </TextBlock.Foreground>
+                                        </TextBlock>
+                                    </Canvas>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Border>
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="{Binding [btnSettingWindowOk], Source={StaticResource lang}, Mode=OneWay}" Padding="10,2" Margin="4"
+                    Command="{Binding OkCommand}" 
+                    CommandParameter="{Binding ., RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+            <Button Content="{Binding [btnSettingWindowCancel], Source={StaticResource lang}, Mode=OneWay}" Padding="10,2" Margin="4"
+                    Command="{Binding CancelCommand}" 
+                    CommandParameter="{Binding ., RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+            <Button Content="{Binding [btnSettingWindowApply], Source={StaticResource lang}, Mode=OneWay}" Padding="10,2" Margin="4"
+                    Command="{Binding ApplyCommand}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Red" Text="{Binding Message, Mode=OneWay}"
+                   VerticalAlignment="Center" Margin="4"/>
+    </Grid>
+</Window>

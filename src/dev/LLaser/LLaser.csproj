@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F05445C1-6151-4E29-A008-AC2F4FA445B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LLaser</RootNamespace>
+    <AssemblyName>llaser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LLaser.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\LLaser.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.Wpf, Version=1.0.7.0, Culture=neutral, PublicKeyToken=50375ca6144f1c69, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\lib\ExtensionWPFToolkit\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BmpMaker\Model\BmpMakerMenuItemModel.cs" />
+    <Compile Include="BmpMaker\Model\BmpMakerToolbarItemModel.cs" />
+    <Compile Include="BmpMaker\Model\WindowBackgroundTypeModel.cs" />
+    <Compile Include="BmpMaker\Model\WindowTypeModel.cs" />
+    <Compile Include="BmpMaker\Model\ColorBarTypeModel.cs" />
+    <Compile Include="BmpMaker\Model\GradationDirectionModel.cs" />
+    <Compile Include="BmpMaker\Model\GradationStepModel.cs" />
+    <Compile Include="BmpMaker\Model\PatternTypeModel.cs" />
+    <Compile Include="BmpMaker\ViewModel\BitDataSettingViewModel.cs" />
+    <Compile Include="BmpMaker\ViewModel\BmpMakerViewModel.cs" />
+    <Compile Include="BmpMaker\ViewModel\ColorSelectViewModel.cs" />
+    <Compile Include="BmpMaker\View\BitDataSettingView.xaml.cs">
+      <DependentUpon>BitDataSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BmpMaker\View\BmpMakerView.xaml.cs">
+      <DependentUpon>BmpMakerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BmpMaker\View\ColorSelectView.xaml.cs">
+      <DependentUpon>ColorSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MainWindowMenuItemModel.cs" />
+    <Compile Include="Model\MenuItemModel.cs" />
+    <Compile Include="Model\TabItemModel.cs" />
+    <Compile Include="Model\ToolbarItemModel.cs" />
+    <Compile Include="PowerTiming\Converter\ElectricalLevelConverter.cs" />
+    <Compile Include="PowerTiming\Converter\SignalLevelConverter.cs" />
+    <Compile Include="PowerTiming\Converter\SignalsConverter.cs" />
+    <Compile Include="PowerTiming\Model\ElectricalLevelModel.cs" />
+    <Compile Include="PowerTiming\Model\PowerTimingCommonCommands.cs" />
+    <Compile Include="PowerTiming\Model\PowerTimingMenuItemModel.cs" />
+    <Compile Include="PowerTiming\Model\PowerTimingModel.cs" />
+    <Compile Include="PowerTiming\Model\PowerTimingToolbarItemModel.cs" />
+    <Compile Include="PowerTiming\Model\SignalModel.cs" />
+    <Compile Include="PowerTiming\ViewModel\PowerTimingViewModel.cs" />
+    <Compile Include="PowerTiming\View\PowerTimingView.xaml.cs">
+      <DependentUpon>PowerTimingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TFTTiming\Model\PolarityModel.cs" />
+    <Compile Include="TFTTiming\Model\TFTTimingMenuItemModel.cs" />
+    <Compile Include="TFTTiming\Model\TFTTimingToolbarItemModel.cs" />
+    <Compile Include="TFTTiming\ViewModel\TFTTimingViewModel.cs" />
+    <Compile Include="TFTTiming\View\TFTTimingView.xaml.cs">
+      <DependentUpon>TFTTimingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SettingWindowViewModel.cs" />
+    <Compile Include="View\SettingWindow.xaml.cs">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\SettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Image\error.png" />
+    <Resource Include="Image\information.png" />
+    <Resource Include="Image\message.png" />
+    <Resource Include="Image\warning.png" />
+    <Resource Include="Image\help.png" />
+    <Resource Include="Image\normal.png" />
+    <Resource Include="Image\image_save.png" />
+    <Resource Include="Image\save.png" />
+    <Resource Include="Image\exit.png" />
+    <Resource Include="Image\fullscreen.png" />
+    <Resource Include="Image\exit_fullscreen.png" />
+    <Resource Include="Image\perference.png" />
+    <Resource Include="Image\image_copy.png" />
+    <Resource Include="Image\edit.png" />
+    <Resource Include="Image\accept.png" />
+    <Resource Include="Image\add.png" />
+    <Resource Include="Image\delete.png" />
+    <Resource Include="Image\export.png" />
+    <Resource Include="Image\import.png" />
+    <Resource Include="Image\open_file.png" />
+    <Resource Include="LLaser.ico" />
+    <Page Include="BmpMaker\View\BitDataSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BmpMaker\View\BmpMakerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BmpMaker\View\ColorSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BmpMaker\View\WindowTypeDrawing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Docs\ThirdPartyLicenses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PowerTiming\View\PowerTimingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TFTTiming\View\TFTDrawing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CompomentModel.cs" />
+    <Compile Include="ValidationEx.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="TFTTiming\View\TFTTimingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="LLaser.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\License.lis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LLaser.Component\LLaser.Component.csproj">
+      <Project>{915e2f21-daf8-48fd-b1f3-03007274c528}</Project>
+      <Name>LLaser.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LLaser.Common\LLaser.Common.csproj">
+      <Project>{72b184ca-24f1-41bf-865a-c1de8adb69a7}</Project>
+      <Name>LLaser.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LLaser.WPF.Control\LLaser.WPF.Controls.csproj">
+      <Project>{f650b004-9e9d-439b-a47c-c6fd928af344}</Project>
+      <Name>LLaser.WPF.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\swap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VersionInfo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

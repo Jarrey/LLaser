@@ -1,0 +1,225 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - Resources.xaml
+    // Created at 2013-4-25
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:view="clr-namespace:LLaser.View"
+                    xmlns:vm="clr-namespace:LLaser.ViewModel"
+                    xmlns:m="clr-namespace:LLaser.Model"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate DataType="{x:Type vm:TFTTimingViewModel}">
+        <Grid>
+            <view:TFTTimingView />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PowerTimingViewModel}">
+        <Grid>
+            <view:PowerTimingView />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:BmpMakerViewModel}">
+        <Grid>
+            <view:BmpMakerView />
+        </Grid>
+    </DataTemplate>
+
+    <!-- toolbar datatemplate -->
+    <DataTemplate DataType="{x:Type m:TFTTimingToolbarItemModel}">
+        <ToolBar>
+            <Button ToolTip="{Binding [btnOpenCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding OpenCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/open_file.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/save.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveAsCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveAsCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/save_as.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnBuildCfg], Source={StaticResource lang}, Mode=OneWay}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    IsEnabled="False">
+                <Image Source="pack://application:,,,/LLaser;component/Image/build.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveImg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveImageCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/image_save.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnFullScreen], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{Binding FullScreenCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/fullscreen.png"/>
+            </Button>
+            <Button ToolTip="{Binding [menuPerference], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{x:Static vm:MainWindowViewModel.OpenSettingCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/perference.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnHelpItem], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{x:Static vm:MainWindowViewModel.OpenHelpCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/help.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnExit], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding ExitCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/exit.png"/>
+            </Button>
+        </ToolBar>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type m:PowerTimingToolbarItemModel}">
+        <ToolBar>
+            <Button ToolTip="{Binding [btnOpenCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding OpenCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/open_file.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/save.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveAsCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveAsCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/save_as.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnBuildCfg], Source={StaticResource lang}, Mode=OneWay}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    IsEnabled="False">
+                <Image Source="pack://application:,,,/LLaser;component/Image/build.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveImg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveImageCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/image_save.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [lblPowerImport], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding ImportCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/LLaser;component/Image/import.png"/>
+                    <TextBlock Text="{Binding [lblPowerImport], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="3,0"/>
+                </StackPanel>
+            </Button>
+            <Button ToolTip="{Binding [lblPowerExport], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding ExportCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/LLaser;component/Image/export.png"/>
+                    <TextBlock Text="{Binding [lblPowerExport], Source={StaticResource lang}, Mode=OneWay}" VerticalAlignment="Center" Margin="3,0"/>
+                </StackPanel>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnFullScreen], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{Binding FullScreenCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/fullscreen.png"/>
+            </Button>
+            <Button ToolTip="{Binding [menuPerference], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{x:Static vm:MainWindowViewModel.OpenSettingCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/perference.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnHelpItem], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{x:Static vm:MainWindowViewModel.OpenHelpCommand}" >
+                <Image Source="pack://application:,,,/LLaser;component/Image/help.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnExit], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding ExitCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/exit.png"/>
+            </Button>
+        </ToolBar>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type m:BmpMakerToolbarItemModel}">
+        <ToolBar>
+
+            <Button ToolTip="{Binding [btnOpenCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding OpenCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/open_file.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveCfg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveCfgCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/save.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnSaveImg], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding SaveImageCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/image_save.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnFullScreen], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{Binding FullScreenCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/fullscreen.png"/>
+            </Button>
+            <Button ToolTip="{Binding [menuPerference], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{x:Static vm:MainWindowViewModel.OpenSettingCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/perference.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding [btnHelpItem], Source={StaticResource lang}, Mode=OneWay}"
+                    Command="{x:Static vm:MainWindowViewModel.OpenHelpCommand}" >
+                <Image Source="pack://application:,,,/LLaser;component/Image/help.png"/>
+            </Button>
+            <Button ToolTip="{Binding [btnExit], Source={StaticResource lang}, Mode=OneWay}" 
+                    Command="{Binding ExitCommand}">
+                <Image Source="pack://application:,,,/LLaser;component/Image/exit.png"/>
+            </Button>
+        </ToolBar>
+    </DataTemplate>
+
+    <!-- main window tabcontrol tabitem style -->
+    <Style x:Key="TabItemContainerStyle" TargetType="TabItem">
+        <Setter Property="Header" Value="{Binding TabItem.Header}" />
+        <Setter Property="Content" Value="{Binding TabItem.Content}" />
+        <Setter Property="Template" Value="{StaticResource ColorfulTabControlTemplate}" />
+    </Style>
+
+
+    <!-- main menu item style -->
+    <Image x:Key="imgMenuIcon" x:Shared="false" Source="{Binding Icon}" Height="16px" Width="16px"/>
+    <Style x:Key="MenuItemContainerStyle" TargetType="MenuItem">
+        <Setter Property="Header" Value="{Binding Header}" />
+        <Setter Property="ItemsSource" Value="{Binding Menus}" />
+        <Setter Property="Command" Value="{Binding Command}" />
+        <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+        <Setter Property="InputGestureText" Value="{Binding Gesture}" />
+        <Setter Property="Icon" Value="{StaticResource imgMenuIcon}"/>
+        <Setter Property="IsEnabled" Value="{Binding IsEnabled}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Icon}" Value="{x:Null}">
+                <Setter Property="Icon" Value="{x:Null}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Header}" Value="SEPERATOR">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="MenuItem">
+                            <Separator/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

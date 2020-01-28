@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{915E2F21-DAF8-48FD-B1F3-03007274C528}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LLaser.Component</RootNamespace>
+    <AssemblyName>LLaser.Component</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\LLaser.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\OpenXmlSDK\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WriteableBitmapEx.Wpf">
+      <HintPath>..\..\..\lib\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\lib\ExtensionWPFToolkit\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BmpMaker\BitDataModel.cs" />
+    <Compile Include="BmpMaker\BmpMaker.cs" />
+    <Compile Include="BmpMaker\BmpMakerBase.cs" />
+    <Compile Include="BmpMaker\ColorBarModel.cs" />
+    <Compile Include="BmpMaker\ColorModel.cs" />
+    <Compile Include="BmpMaker\GradationModel.cs" />
+    <Compile Include="BmpMaker\IBmpExecutor.cs" />
+    <Compile Include="BmpMaker\IBmpPropertyChangedNotification.cs" />
+    <Compile Include="BmpMaker\ImportBMPModel.cs" />
+    <Compile Include="BmpMaker\PatternModel.cs" />
+    <Compile Include="BmpMaker\SizeModel.cs" />
+    <Compile Include="BmpMaker\SolidColorModel.cs" />
+    <Compile Include="BmpMaker\WindowModel.cs" />
+    <Compile Include="CommonEnums.cs" />
+    <Compile Include="Export\binExport.cs" />
+    <Compile Include="Export\csvExport.cs" />
+    <Compile Include="Export\excelExport.cs" />
+    <Compile Include="Export\ExportFactory.cs" />
+    <Compile Include="Export\xmlExport.cs" />
+    <Compile Include="Import\binImport.cs" />
+    <Compile Include="Import\csvImport.cs" />
+    <Compile Include="Import\excelImport.cs" />
+    <Compile Include="Import\ImportFactory.cs" />
+    <Compile Include="Import\xmlImport.cs" />
+    <Compile Include="Lang\LangManager.cs" />
+    <Compile Include="LLaserConfgModel.cs" />
+    <Compile Include="MessageHelper.cs" />
+    <Compile Include="PowerTiming\SignalCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PowerTiming\Signal.cs" />
+    <Compile Include="PowerTiming\PowerTiming.cs" />
+    <Compile Include="PowerTiming\SignalExistingException.cs" />
+    <Compile Include="TFTTiming\TFTTiming.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LLaser.Common\LLaser.Common.csproj">
+      <Project>{72b184ca-24f1-41bf-865a-c1de8adb69a7}</Project>
+      <Name>LLaser.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lang\Language_zh-cn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lang\Language_en-us.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

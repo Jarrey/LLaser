@@ -1,0 +1,98 @@
+﻿<Window x:Class="LLaser.View.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prop="clr-namespace:LLaser.Properties" xmlns:common="clr-namespace:LLaser.Common;assembly=LLaser.Common"
+        Title="{Binding [menuAbout], Source={StaticResource lang}, Mode=OneWay}" 
+        Height="150" Width="300" 
+        WindowStartupLocation="CenterScreen" ShowInTaskbar="False" 
+        ResizeMode="NoResize" Icon="/LLaser;component/LLaser.ico" WindowStyle="None" 
+        AllowsTransparency="True" Background="Transparent" SizeToContent="WidthAndHeight"
+        MouseDown="About_OnMouseDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="10" Background="White" Opacity="0.9" Grid.ColumnSpan="2"/>
+        
+        <Image Source="/LLaser.ico" Width="80" Height="80" Margin="30,20,10,60" VerticalAlignment="Top">
+            <Image.Effect>
+                <DropShadowEffect Color="Gray" ShadowDepth="2"/>
+            </Image.Effect>
+        </Image>
+
+        <Border Grid.Column="1" Margin="15,15,15,10" TextElement.Foreground="#FF3C1C05">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock HorizontalAlignment="Left" Margin="0,4">
+                        <TextBlock.Inlines>
+                            <Run Text="{Binding [AppName], Source={StaticResource lang}, Mode=OneWay}" FontSize="40" FontStyle="Italic" FontWeight="Bold"/>
+                        </TextBlock.Inlines>
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="Gray" ShadowDepth="2"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,4">
+                    <TextBlock.Inlines>
+                        <Run Text="{Binding [lblVersion], Source={StaticResource lang}, Mode=OneWay}"/>
+                        <Run Text="{Binding Version, Mode=OneWay}"/>
+                    </TextBlock.Inlines>
+                </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,4">
+                    <TextBlock.Inlines>
+                        <Run Text="{Binding [lblBuildVersion], Source={StaticResource lang}, Mode=OneWay}"/>
+                        <Run Text="{Binding BuildVersion, Mode=OneWay}"/>
+                    </TextBlock.Inlines>
+                </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,4">
+                    <TextBlock.Inlines>
+                        <Run Text="{Binding [lblCopyright], Source={StaticResource lang}, Mode=OneWay}"/>
+                        <Run Text=" ©"/>
+                            <Run Text="{Binding Company, Mode=OneWay}"/>
+                        </TextBlock.Inlines>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,4">
+                        <TextBlock.Inlines>
+                            <Run Text="{Binding [lblAuthor], Source={StaticResource lang}, Mode=OneWay}"/>
+                            <Run Text="{Binding Author, Mode=OneWay}"/>
+                    </TextBlock.Inlines>
+                </TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,40,0,0">
+                    <TextBlock.Inlines>
+                        <Run Text="{Binding [lblSupport], Source={StaticResource lang}, Mode=OneWay}"/>
+                            <Run Text=" "/>
+                            <Run Text="{Binding [GLOBAL_SUPPORTMAIL], Source={x:Static common:AppSettings.Instance}, Mode=OneWay}"
+                             Foreground="Blue" FontStyle="Italic" TextDecorations="Underline"/>
+                    </TextBlock.Inlines>
+                </TextBlock>
+            </StackPanel>
+
+                <Border x:Name="borLicenseInfo" Grid.Column="1" Margin="15,0,0,0">
+                    <TabControl Width="400" Height="220">
+                        <TabItem Header="{Binding [lblVersionInfo], Source={StaticResource lang}, Mode=OneWay}">
+                            <Grid>
+                                <TextBox IsReadOnly="True" Background="Transparent" BorderThickness="0" TextWrapping="Wrap"
+                                         Text="{Binding VersionInfo, Mode=OneWay}" VerticalScrollBarVisibility="Auto"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="{Binding [lblLicenseInfo], Source={StaticResource lang}, Mode=OneWay}">
+                            <Grid>
+                                <TextBox IsReadOnly="True" Background="Transparent" BorderThickness="0" TextWrapping="Wrap"
+                                         Text="{Binding License, Mode=OneWay}" VerticalScrollBarVisibility="Auto"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="{Binding [lbl3rdPartyInfo], Source={StaticResource lang}, Mode=OneWay}">
+                            <Grid>
+                                <FlowDocumentScrollViewer Document="{Binding ThirdPartyLicenses}"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

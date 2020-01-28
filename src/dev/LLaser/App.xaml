@@ -1,0 +1,56 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - App.xaml
+    // Created at 2013-4-24
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<Application x:Class="LLaser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LLaser"
+             xmlns:converter="clr-namespace:LLaser.Common.Converter;assembly=LLaser.Common"
+             xmlns:lang="clr-namespace:LLaser.Component.Lang;assembly=LLaser.Component"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:component="clr-namespace:LLaser.Component;assembly=LLaser.Component"
+             StartupUri="View/MainWindow.xaml"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/LLaser.WPF.Controls;component/Themes/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter:BooleanNegationConverter x:Key="booleanNegationConverter"/>
+            <xctk:VisibilityToBoolConverter x:Key="visibilityToBoolConverter" Inverted="True"/>
+            
+            <x:Static x:Key="lang" Member="lang:LangManager.Current"/>
+            <x:Static x:Key="msg" Member="component:MessageHelper.Current"/>
+            
+            <!--<SolidColorBrush x:Key="dwSignalLineBrush" Color="Yellow" />
+            <SolidColorBrush x:Key="dwSignalLineHighlightBrush" Color="Red" />
+            <SolidColorBrush x:Key="dwLineBrush" Color="Red" />
+            <SolidColorBrush x:Key="dwTextBrush" Color="Red" />
+            <SolidColorBrush x:Key="dwHighlightTextBrush" Color="Yellow" />
+            <SolidColorBrush x:Key="dwValueTextBrush" Color="Yellow" />-->
+
+            <Style TargetType="xctk:CalculatorUpDown">
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError" Value="true">
+                        <Setter Property="ToolTip"
+                                Value="{Binding RelativeSource={RelativeSource Self}, 
+                       Path=(Validation.Errors)[0].ErrorContent}"/>
+                        <Setter Property="local:ValidationEx.ErrorMessage"
+                                Value="{Binding RelativeSource={RelativeSource Self}, 
+                       Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

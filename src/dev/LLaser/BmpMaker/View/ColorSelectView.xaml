@@ -1,0 +1,73 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - ColorSelectView.xaml
+    // Created at 2013-6-16
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<Window x:Class="LLaser.View.ColorSelectView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:controls="clr-namespace:LLaser.WPF.Controls;assembly=LLaser.WPF.Controls"
+        xmlns:viewModel="clr-namespace:LLaser.ViewModel"
+        Title="{Binding [lblColorSelectWindowTitle], Source={StaticResource lang}, Mode=OneWay}" Height="300" Width="300"
+        Icon="pack://application:,,,/LLaser;component/Image/palette.png" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        UseLayoutRounding="True" SnapsToDevicePixels="True" ShowInTaskbar="False" Topmost="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- color number -->
+        <StackPanel Orientation="Horizontal" Margin="4">
+            <TextBlock Text="{Binding [lblColorSelectWindowColorNumber], Source={StaticResource lang}, Mode=OneWay}" Margin="4" VerticalAlignment="Center"/>
+            <xctk:CalculatorUpDown Minimum="2" Maximum="8" Increment="1" Margin="4" VerticalAlignment="Center" Width="100"
+                               Value="{Binding Model.CustomColorBarCount}"/>
+        </StackPanel>
+
+        <!-- colors -->
+        <ItemsControl Grid.Row="1" Margin="4" ItemsSource="{Binding Model.CustomColors, Mode=OneWay}">
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="FrameworkElement">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Visibility="{Binding IsEnabled, Mode=OneWay, Converter={StaticResource visibilityToBoolConverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock VerticalAlignment="Center" Margin="4">
+                            <TextBlock.Inlines>
+                                <Run Text="{Binding [lblColorSelectWindowColor], Source={StaticResource lang}, Mode=OneWay}"/>
+                                <Run Text="{Binding Index, Mode=OneWay}"/>
+                                <Run Text=":"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <xctk:ColorPicker Grid.Column="1" VerticalAlignment="Center" Margin="4" DisplayColorAndName="True"
+                                          ShowStandardColors="True" ShowAvailableColors="False" UsingAlphaChannel="False" ShowAdvancedButton="True"
+                                          StandardColorsHeader="{Binding [ColorPickerStandardColorsButtonName], Source={StaticResource lang}, Mode=OneWay}"
+                                          StandardColors="{Binding ., Source={x:Static viewModel:BmpMakerViewModel.StandardColors}, Mode=OneWay}"
+                                          SelectedColor="{Binding Color}"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- buttons -->
+        <UniformGrid Grid.Row="2" Margin="4">
+            <Button Content="{Binding [btnWindowClose], Source={StaticResource lang}, Mode=OneWay}" Margin="4" VerticalAlignment="Center"
+                    Click="Close_OnClick"/>
+            <Button Content="{Binding [btnColorSelectWindowDefault], Source={StaticResource lang}, Mode=OneWay}" Margin="4" VerticalAlignment="Center"
+                    Command="{Binding DefaultCommand}"/>
+        </UniformGrid>
+    </Grid>
+</Window>

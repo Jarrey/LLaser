@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser", "LLaser\LLaser.csproj", "{F05445C1-6151-4E29-A008-AC2F4FA445B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser.Common", "LLaser.Common\LLaser.Common.csproj", "{72B184CA-24F1-41BF-865A-C1DE8ADB69A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser.WPF.Controls", "LLaser.WPF.Control\LLaser.WPF.Controls.csproj", "{F650B004-9E9D-439B-A47C-C6FD928AF344}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{53A2098E-79CF-4DC8-8AF3-763E7E15FEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser.Component", "LLaser.Component\LLaser.Component.csproj", "{915E2F21-DAF8-48FD-B1F3-03007274C528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser.Test", "LLaser.Test\LLaser.Test.csproj", "{D696EC66-F123-4A2A-B1BE-C163D6807788}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{99EAF80B-AE65-4BAD-B707-0B2F10586183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLaser.CLI", "LLaser.CLI\LLaser.CLI.csproj", "{5332BDC8-632F-4D1D-A8D2-3FE0EB5CC3E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{465E7946-9656-44DE-9993-511DD6CD7BB4}"
+	ProjectSection(SolutionItems) = preProject
+		AssemblyInfo.cs = AssemblyInfo.cs
+		LLaser.snk = LLaser.snk
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jarrey.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LLaser\\LLaser.csproj
+		SccProjectName1 = LLaser
+		SccLocalPath1 = LLaser
+		SccProjectUniqueName2 = LLaser.Component\\LLaser.Component.csproj
+		SccProjectName2 = LLaser.Component
+		SccLocalPath2 = LLaser.Component
+		SccProjectUniqueName3 = LLaser.Test\\LLaser.Test.csproj
+		SccProjectTopLevelParentUniqueName3 = LLaser.sln
+		SccProjectName3 = LLaser.Test
+		SccLocalPath3 = LLaser.Test
+		SccProjectUniqueName4 = LLaser.WPF.Control\\LLaser.WPF.Controls.csproj
+		SccProjectTopLevelParentUniqueName4 = LLaser.sln
+		SccProjectName4 = LLaser.WPF.Control
+		SccLocalPath4 = LLaser.WPF.Control
+		SccProjectUniqueName5 = LLaser.Common\\LLaser.Common.csproj
+		SccProjectName5 = LLaser.Common
+		SccLocalPath5 = LLaser.Common
+		SccProjectUniqueName6 = LLaser.CLI\\LLaser.CLI.csproj
+		SccProjectName6 = LLaser.CLI
+		SccLocalPath6 = LLaser.CLI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F05445C1-6151-4E29-A008-AC2F4FA445B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05445C1-6151-4E29-A008-AC2F4FA445B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05445C1-6151-4E29-A008-AC2F4FA445B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05445C1-6151-4E29-A008-AC2F4FA445B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B184CA-24F1-41BF-865A-C1DE8ADB69A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B184CA-24F1-41BF-865A-C1DE8ADB69A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B184CA-24F1-41BF-865A-C1DE8ADB69A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B184CA-24F1-41BF-865A-C1DE8ADB69A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F650B004-9E9D-439B-A47C-C6FD928AF344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F650B004-9E9D-439B-A47C-C6FD928AF344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F650B004-9E9D-439B-A47C-C6FD928AF344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F650B004-9E9D-439B-A47C-C6FD928AF344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915E2F21-DAF8-48FD-B1F3-03007274C528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915E2F21-DAF8-48FD-B1F3-03007274C528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915E2F21-DAF8-48FD-B1F3-03007274C528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915E2F21-DAF8-48FD-B1F3-03007274C528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D696EC66-F123-4A2A-B1BE-C163D6807788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D696EC66-F123-4A2A-B1BE-C163D6807788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D696EC66-F123-4A2A-B1BE-C163D6807788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5332BDC8-632F-4D1D-A8D2-3FE0EB5CC3E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5332BDC8-632F-4D1D-A8D2-3FE0EB5CC3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5332BDC8-632F-4D1D-A8D2-3FE0EB5CC3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5332BDC8-632F-4D1D-A8D2-3FE0EB5CC3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F650B004-9E9D-439B-A47C-C6FD928AF344} = {53A2098E-79CF-4DC8-8AF3-763E7E15FEE8}
+		{D696EC66-F123-4A2A-B1BE-C163D6807788} = {99EAF80B-AE65-4BAD-B707-0B2F10586183}
+	EndGlobalSection
+EndGlobal

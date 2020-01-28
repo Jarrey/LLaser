@@ -1,0 +1,166 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontSize="11" TextAlignment="Left">
+    <Paragraph>
+        Part of
+        <Run FontWeight="Bold" FontSize="12">LLaser</Run> created by following third-party open projects:
+    </Paragraph>
+    <List>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                WPF Toolkit:
+                <Run TextDecorations="Underline" Foreground="Blue">http://wpf.codeplex.com/</Run>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                Extended WPF Toolkit™ Community Edition:
+                <Run TextDecorations="Underline" Foreground="Blue">http://wpftoolkit.codeplex.com/</Run>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                MVVM Light Toolkit:
+                <Run TextDecorations="Underline" Foreground="Blue">http://mvvmlight.codeplex.com/</Run>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                Microsoft - OpenXml SDK 2.5:
+                <Run TextDecorations="Underline" Foreground="Blue">
+                    http://www.microsoft.com/en-us/download/details.aspx?id=30425
+                </Run>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                WriteableBitmapEx library:
+                <Run TextDecorations="Underline" Foreground="Blue">
+                    http://writeablebitmapex.codeplex.com/
+                </Run>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph FontWeight="Bold">
+                Dr. WPF - ObservableDictionary:
+                <Run TextDecorations="Underline" Foreground="Blue">
+                    http://drwpf.com/blog/2007/09/16/can-i-bind-my-itemscontrol-to-a-dictionary/
+                </Run>
+            </Paragraph>
+        </ListItem>
+    </List>
+    <Paragraph FontStyle="Italic">
+        Any redistribute this software product, you must comply with the above third-party components terms and conditions stipulated by the grantee. The third-party components bound by their respective license terms and jurisdiction.
+    </Paragraph>
+    <Paragraph>
+        ------------------------------------------------------
+    </Paragraph>
+    <Paragraph>
+        WPF Toolkit and Extended WPF Toolkit™ Community Edition project
+        ans WriteableBitmapEx library are released under the Microsoft Public License (Ms-PL):
+    </Paragraph>
+    <Paragraph FontWeight="Bold">
+        Microsoft Public License (Ms-PL)
+    </Paragraph>
+    <Paragraph>
+        This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
+    </Paragraph>
+    <Paragraph>1. Definitions</Paragraph>
+    <Paragraph>
+        The terms &quot;reproduce,&quot; &quot;reproduction,&quot; &quot;derivative works,&quot; and &quot;distribution&quot; have the same meaning here as under U.S. copyright law.
+    </Paragraph>
+    <Paragraph>
+        A &quot;contribution&quot; is the original software, or any additions or changes to the software.
+    </Paragraph>
+    <Paragraph>
+        A &quot;contributor&quot; is any person that distributes its contribution under this license.
+    </Paragraph>
+    <Paragraph>
+        &quot;Licensed patents&quot; are a contributor's patent claims that read directly on its contribution.
+    </Paragraph>
+    <Paragraph>
+        2. Grant of Rights
+    </Paragraph>
+    <Paragraph>
+        (A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+    </Paragraph>
+    <Paragraph>
+        (B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works of the contribution in the software.
+    </Paragraph>
+    <Paragraph>
+        3. Conditions and Limitations
+    </Paragraph>
+    <Paragraph>
+        (A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
+    </Paragraph>
+    <Paragraph>
+        (B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, your patent license from such contributor to the software ends automatically.
+    </Paragraph>
+    <Paragraph>
+        (C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.
+    </Paragraph>
+    <Paragraph>
+        (D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
+    </Paragraph>
+    <Paragraph>
+        (E) The software is licensed &quot;as-is.&quot; You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+    </Paragraph>
+    <Paragraph>
+        -------------------------------------------------------
+    </Paragraph>
+    <Paragraph>
+        MVVM Light Toolkit project uses MIT
+    </Paragraph>
+    <Paragraph FontWeight="Bold">
+        The MIT License (MIT)
+    </Paragraph>
+    <Paragraph>
+        Copyright (c) 2009 - 2011 Laurent Bugnion
+    </Paragraph>
+    <Paragraph>
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    </Paragraph>
+    <Paragraph>
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    </Paragraph>
+    <Paragraph>
+        THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </Paragraph>
+    <Paragraph>
+        -------------------------------------------------------
+    </Paragraph>
+    <Paragraph>
+        Dr. WPF - ObservableDictionary part:
+    </Paragraph>
+    <Paragraph>
+        * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    </Paragraph>
+    <Paragraph>
+        * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+    </Paragraph>
+    <Paragraph>
+        * The name Dr. WPF may not be used to endorse or promote products derived from this software without specific prior written permission.
+    </Paragraph>
+    <Paragraph>
+        ObservableDictionary IS PROVIDED BY Dr. WPF ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Dr. WPF BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    </Paragraph>
+    <Paragraph>
+        -------------------------------------------------------
+    </Paragraph>
+    <Paragraph>
+        Microsoft - OpenXml SDK 2.5:
+    </Paragraph>
+    <Paragraph>
+        Open XML is an open ECMA 376 standard and is also approved as the ISO/IEC 29500 standard that defines a set of XML schemas for representing spreadsheets, charts, presentations, and word processing documents. Microsoft Office Word 2007, Excel 2007, PowerPoint 2007, and the later versions all use Open XML as the default file format.
+    </Paragraph>
+    <Paragraph>
+        The Open XML file formats are useful for developers because they use an open standard and are based on well-known technologies: ZIP and XML.
+    </Paragraph>
+    <Paragraph>
+        The Open XML SDK 2.5 for Microsoft Office is built on top of the System.IO.Packaging API and provides strongly typed part classes to manipulate Open XML documents. The SDK also uses the .NET Framework Language-Integrated Query (LINQ) technology to provide strongly typed object access to the XML content inside the parts of Open XML documents.
+    </Paragraph>
+    <Paragraph>
+        The Open XML SDK 2.5 simplifies the task of manipulating Open XML packages and the underlying Open XML schema elements within a package. The Open XML Application Programming Interface (API) encapsulates many common tasks that developers perform on Open XML packages, so you can perform complex operations with just a few lines of code.
+    </Paragraph>
+    <Paragraph>
+        The tools package contains the Open XML SDK v2.5 Productivity Tool for Office and the hyperlink to documentation for the Open XML SDK 2.5. The Open XML SDK 2.5 Productivity Tool for Microsoft Office provides a number of features designed to improve your productivity and accelerate your learning while working with the SDK and Open XML files. Features include the ability to generate Open XML SDK 2.5 source code based on document content, compare source and target Open XML documents to reveal differences and to generate source code to create the target from the source, validate documents, and display documentation for the Open XML SDK 2.5 Classes, the ECMA376v1 standard, and the Microsoft Office implementation notes.
+    </Paragraph>
+</FlowDocument>

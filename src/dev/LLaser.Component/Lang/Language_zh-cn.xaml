@@ -1,0 +1,248 @@
+﻿<!--
+    //*********************************************************
+    // LLaser project - Language.xaml
+    // Created at 2013-4-29
+    // Author: Bob Bao jar.bob@gmail.com
+    //
+    // All rights reserved. Please follow license agreement to
+    // rewrite and copy this code.
+    //
+    //*********************************************************
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:LLaser.Common;assembly=LLaser.Common">
+
+    <c:Lang x:Key="Res_zh-cn">
+        <c:L Key="AppName" Value="LLaser" />
+        <c:L Key="lblVersion" Value="版本:" />
+        <c:L Key="lblBuildVersion" Value="内部版本:" />
+        <c:L Key="lblCopyright" Value="版权所有" />
+        <c:L Key="lblVersionInfo" Value="版本信息" />
+        <c:L Key="lblLicenseInfo" Value="许可证信息" />
+        <c:L Key="lbl3rdPartyInfo" Value="第三方声明" />
+        <c:L Key="lblAuthor" Value="作者:" />
+        <c:L Key="lblSupport" Value="技术支持" />
+        <c:L Key="lblMemory" Value="内存" />
+        <c:L Key="lblOpenFileDialogTitle" Value="打开..." />
+        <c:L Key="lblSaveFileDialogTitle" Value="保存..." />
+        <c:L Key="lblSaveAsFileDialogTitle" Value="另存为..." />
+        <c:L Key="menuFile" Value="文件(_F)" />
+        <c:L Key="menuOP" Value="操作(_O)" />
+        <c:L Key="menuTools" Value="工具(_T)" />
+        <c:L Key="menuHelp" Value="帮助(_H)" />
+        <c:L Key="menuOpenCfg" Value="打开配置" />
+        <c:L Key="menuOpenCfgGesture" Value="Ctl+O" />
+        <c:L Key="menuSaveCfg" Value="保存配置" />
+        <c:L Key="menuSaveCfgGesture" Value="Ctl+S" />
+        <c:L Key="menuSaveAsCfg" Value="另存为配置..." />
+        <c:L Key="menuSaveAsCfgGesture" Value="Ctl+Alt+S" />
+        <c:L Key="menuBuildCfg" Value="生成配置文件..." />
+        <c:L Key="menuBuildCfgGesture" Value="F5" />
+        <c:L Key="menuSaveImg" Value="保存图片" />
+        <c:L Key="menuSaveImgGesture" Value="Ctl+P" />
+        <c:L Key="menuCopyImg" Value="复制图片" />
+        <c:L Key="menuCopyImgGesture" Value="Ctl+C" />
+        <c:L Key="menuAbout" Value="关于" />
+        <c:L Key="menuExit" Value="退出" />
+        <c:L Key="menuExitGesture" Value="Ctl+Q" />
+        <c:L Key="menuFullScreen" Value="全屏" />
+        <c:L Key="menuFullScreenGesture" Value="F11" />
+        <c:L Key="menuExitFullScreen" Value="退出全屏" />
+        <c:L Key="menuPerference" Value="设置" />
+        <c:L Key="menuHelpItem" Value="帮助" />
+        <c:L Key="menuHelpItemGesture" Value="F1" />
+        <c:L Key="btnSaveImg" Value="保存图片(Ctl+P)" />
+        <c:L Key="btnFullScreen" Value="全屏(F11)" />
+        <c:L Key="btnExitFullScreen" Value="退出全屏(F11)" />
+        <c:L Key="btnOpenCfg" Value="打开配置(Ctl+O)" />
+        <c:L Key="btnSaveCfg" Value="保存配置(Ctl+S)" />
+        <c:L Key="btnSaveAsCfg" Value="另存为配置...(Ctl+Alt+S)" />
+        <c:L Key="btnBuildCfg" Value="生成配置文件...(F5)" />
+        <c:L Key="btnExit" Value="退出(Ctl+Q)" />
+        <c:L Key="btnHelpItem" Value="帮助(F1)" />
+        <c:L Key="lblTimingCfgFileFilters" Value="时序配置文件 (*.xml)|*.xml|时序配置二进制文件 (*.bin)|*.bin" />
+        <c:L Key="lblBMPCfgFileFilters" Value="BMP生成配置文件 (*.xml)|*.xml|BMP生成配置二进制文件 (*.bin)|*.bin" />
+        <c:L Key="btnAdd" Value="添加" />
+        <c:L Key="btnDelete" Value="删除" />
+        <c:L Key="TFTTimingTitle" Value="TFT时序" />
+        <c:L Key="lblTFTSetting" Value="时序设定" />
+        <c:L Key="lblDCK" Value="DCK:" />
+        <c:L Key="lblDCKPolarity" Value="DCK极性:" />
+        <c:L Key="lblFreq" Value="1/DCK:" />
+        <c:L Key="lblDCKUnit" Value="MHz" />
+        <c:L Key="lblHsyncSetting" Value="Hsync参数设定" />
+        <c:L Key="lblVsyncSetting" Value="Vsync参数设定" />
+        <c:L Key="lblSyncWidth" Value="SyncWidth:" />
+        <c:L Key="lblHT" Value="HT:" />
+        <c:L Key="lblHBP" Value="HBP:" />
+        <c:L Key="lblHSyncUnit" Value="DCK" />
+        <c:L Key="lblVSyncUnit" Value="Line" />
+        <c:L Key="lblVT" Value="VT:" />
+        <c:L Key="lblVBP" Value="VBP:" />
+        <c:L Key="lblBackPorch" Value="BackPorch:" />
+        <c:L Key="lblBackPorchInDw" Value="BackPorch = HBP-SyncWidth:" />
+        <c:L Key="lblVBackPorchInDw" Value="BackPorch = VBP-SyncWidth:" />
+        <c:L Key="lblValid" Value="Valid:" />
+        <c:L Key="lblFrontPorch" Value="FrontPorch:" />
+        <c:L Key="lblHPolarity" Value="Hsync极性:" />
+        <c:L Key="lblVPolarity" Value="Vsync极性:" />
+        <c:L Key="lblHENPolarity" Value="DEN极性:" />
+        <c:L Key="lblDataBlankPolarity" Value="数据空白域极性:" />
+        <c:L Key="lblHVDelay" Value="Hsy-Vsy延时:" />
+        <c:L Key="lblTFTPreviewRemark" Value="图示仅为参考，比例未按实际信号绘制" />
+        <c:L Key="lblResult" Value="计算结果" />
+        <c:L Key="lblResultPeriod" Value="period:" />
+        <c:L Key="lblResultPeriodUnit" Value="ns" />
+        <c:L Key="lblRresultVerTime" Value="Ver_Time:" />
+        <c:L Key="lblRresultVerTimeUnit" Value="KHz" />
+        <c:L Key="lblResultFraTime" Value="Fra_Time:" />
+        <c:L Key="lblResultFraTimeUnit" Value="Hz" />
+        <c:L Key="polarityH2L" Value="下降沿" />
+        <c:L Key="polarityL2H" Value="上升沿" />
+        <c:L Key="polarityHEN" Value="高有效" />
+        <c:L Key="polarityLEN" Value="低有效" />
+        <c:L Key="polarityH" Value="常高" />
+        <c:L Key="polarityL" Value="常低" />
+        <c:L Key="lblHSY" Value="HSY" />
+        <c:L Key="lblVSY" Value="VSY" />
+        <c:L Key="lblDCLK" Value="DCK" />
+        <c:L Key="lblDS" Value="DS" />
+        <c:L Key="lblHEN" Value="DEN" />
+        <c:L Key="PowerTimingTitle" Value="电源时序" />
+        <c:L Key="lblPowerTimingSetting" Value="电源时序设定" />
+        <c:L Key="lblPowerOn" Value="电源开" />
+        <c:L Key="lblPowerOff" Value="电源关" />
+        <c:L Key="lblPowerLevelH" Value="高" />
+        <c:L Key="lblPowerLevelL" Value="低" />
+        <c:L Key="lblPowerTime" Value="时间(ms)" />
+        <c:L Key="lblPowerLevel" Value="电平" />
+        <c:L Key="lblPowerType" Value="类型:" />
+        <c:L Key="lblPowerParameterSetting" Value="参数设置" />
+        <c:L Key="lblPowerTimeSetting" Value="时间:" />
+        <c:L Key="lblPowerTimeUnitSetting" Value="ms" />
+        <c:L Key="lblPowerImport" Value="导入..." />
+        <c:L Key="lblPowerExport" Value="导出..." />
+        <c:L Key="lblPowerRGB" Value="RGB" />
+        <c:L Key="lblPowerAC1" Value="AC1" />
+        <c:L Key="lblPowerAC0" Value="AC0" />
+        <c:L Key="lblPowerVLED" Value="VLED" />
+        <c:L Key="lblPowerVSHA" Value="VSHA" />
+        <c:L Key="lblPowerVSHD" Value="VSHD" />
+        <c:L Key="lblPowerTimingCfgFileFilters" Value="Excel文件 (*.xlsx)|*.xlsx|逗号分隔符文件 (*.csv)|*.csv|XML文件 (*.xml)|*.xml" />
+        <c:L Key="titlePowerParameterError" Value="参数错误" />
+        <c:L Key="lblPowerTimeExistingError" Value="无法添加时间为 {0} ms 的参数项，是否要覆盖？" />
+        <c:L Key="titleImportError" Value="导入错误" />
+        <c:L Key="titleExportError" Value="导出错误" />
+        <c:L Key="lblImportWrongFileFormatError" Value="无法识别文件格式和内容" />
+        <c:L Key="lblExportFailedError" Value="导出文件失败" />
+        <c:L Key="BmpMakerTitle" Value="测试BMP生成器" />
+        <c:L Key="ColorRedName" Value="红色"/>
+        <c:L Key="ColorGreenName" Value="绿色"/>
+        <c:L Key="ColorBlueName" Value="蓝色"/>
+        <c:L Key="ColorMagentaName" Value="洋红色"/>
+        <c:L Key="ColorCyanName" Value="青色"/>
+        <c:L Key="ColorYellowName" Value="黄色"/>
+        <c:L Key="ColorBlackName" Value="黑色"/>
+        <c:L Key="ColorWhiteName" Value="白色"/>
+        <c:L Key="ColorPickerAvailableColorsButtonName" Value="推荐颜色"/>
+        <c:L Key="ColorPickerStandardColorsButtonName" Value="预置颜色"/>
+        <c:L Key="lblGeneratingBmpBusy" Value="正在生成BMP，请稍等..."/>
+        <c:L Key="lblBmpWidth" Value="宽:"/>
+        <c:L Key="lblBmpHeight" Value="高:"/>
+        <c:L Key="lblColorSetting" Value="填充"/>
+        <c:L Key="lblSolidColor" Value="纯色:"/>
+        <c:L Key="lblColorBar" Value="色条:"/>
+        <c:L Key="btnColorSelect" Value="选择颜色..."/>
+        <c:L Key="lblColorSelectWindowTitle" Value="选择颜色"/>
+        <c:L Key="lblGradationSetting" Value="渐变"/>
+        <c:L Key="lblGradationStart" Value="起:"/>
+        <c:L Key="lblGradationEnd" Value="止:"/>
+        <c:L Key="lblGradationGrayStep" Value="灰度渐变"/>
+        <c:L Key="lblGradationSGrayStep" Value="S灰度渐变"/>
+        <c:L Key="lblGradationStep" Value="位深:"/>
+        <c:L Key="lblGradationDirection" Value="方向:"/>
+        <c:L Key="lblColorSelectWindowColorNumber" Value="颜色数量:"/>
+        <c:L Key="lblColorSelectWindowColor" Value="颜色 "/>
+        <c:L Key="btnWindowClose" Value="关闭(_C)"/>
+        <c:L Key="btnColorSelectWindowDefault" Value="默认设置(_R)"/>
+        <c:L Key="lblPattern" Value="图案:"/>
+        <c:L Key="lblCustomFill" Value="自定义填充:"/>
+        <c:L Key="btnCustomFillSetting" Value="设置..."/>
+        <c:L Key="lblImportBMP" Value="导入BMP:"/>
+        <c:L Key="btnImportBMPOpen" Value="打开(_O)..."/>
+        <c:L Key="lblWindowSetting" Value="窗口"/>
+        <c:L Key="BitDataWindowTitle" Value="自定义填充色设置"/>
+        <c:L Key="lblXAxisCount" Value="x轴数量:"/>
+        <c:L Key="lblYAxisCount" Value="y轴数量:"/>
+        <c:L Key="lblLClick" Value="左键颜色:"/>
+        <c:L Key="lblRClick" Value="右键颜色:"/>
+        <c:L Key="lblWindowType" Value="类型:"/>
+        <c:L Key="lblWindowBackground" Value="背景:"/>
+        <c:L Key="lblWindowColor" Value="颜色:"/>
+        <c:L Key="lblWindowGrayStep" Value="灰度级别:"/>
+        <c:L Key="lblWindowX1" Value="X1:"/>
+        <c:L Key="lblWindowX2" Value="X2:"/>
+        <c:L Key="lblWindowY1" Value="Y1:"/>
+        <c:L Key="lblWindowY2" Value="Y2:"/>
+        <c:L Key="lblWindowHLength" Value="水平长度:"/>
+        <c:L Key="lblWindowVLength" Value="垂直长度:"/>
+        <c:L Key="lblWindowHSpace" Value="水平间距:"/>
+        <c:L Key="lblWindowVSpace" Value="垂直间距:"/>
+        <c:L Key="colorBarTypeHColor" Value="H Color"/>
+        <c:L Key="colorBarTypeVColor" Value="V Color"/>
+        <c:L Key="colorBarTypeHRGB" Value="H RGB"/>
+        <c:L Key="colorBarTypeVRGB" Value="V RGB"/>
+        <c:L Key="colorBarTypeHRGBW" Value="H RGBW"/>
+        <c:L Key="colorBarTypeVRGBW" Value="V RGBW"/>
+        <c:L Key="gradationDirectionH" Value="水平"/>
+        <c:L Key="gradationDirectionV" Value="垂直"/>
+        <c:L Key="gradationDirectionLT2RB" Value="对角 左上->右下"/>
+        <c:L Key="gradationDirectionRB2LT" Value="对角 右下->左上"/>
+        <c:L Key="gradationDirectionCH" Value="中心&lt;->水平"/>
+        <c:L Key="gradationDirectionCV" Value="中心&lt;->垂直"/>
+        <c:L Key="gradationDirectionCE" Value="中心->边缘"/>
+        <c:L Key="gradationDirectionR" Value="辐射"/>
+        <c:L Key="patternTypeWhite" Value="白底无边框"/>
+        <c:L Key="patternTypeWhiteWBorder" Value="白底有边框"/>
+        <c:L Key="patternTypeBlack" Value="黑底无边框"/>
+        <c:L Key="patternTypeBlackWBorder" Value="黑底有边框"/>
+        <c:L Key="lblImportBmpFileFilter" Value="BMP位图文件 (*.bmp)|*.bmp" />
+        <c:L Key="lblImportBmpFileNotExisted" Value="文件 '{0}' 不存在" />
+        <c:L Key="windowTypeSingle" Value="单一" />
+        <c:L Key="windowTypeCross" Value="交叉" />
+        <c:L Key="windowTypeMatrix" Value="矩阵" />
+        <c:L Key="windowTypeWindow2" Value="双窗口" />
+        <c:L Key="windowTypeFrame" Value="框架" />
+        <c:L Key="windowTypeChecker" Value="棋盘" />
+        <c:L Key="windowBackgroundTypeInside" Value="内部" />
+        <c:L Key="windowBackgroundTypeOutside" Value="外部" />
+        <c:L Key="dwWindowP1" Value="X1, Y1" />
+        <c:L Key="dwWindowP2" Value="X2, Y2" />
+        <c:L Key="dwWindowHLength" Value="水平长度" />
+        <c:L Key="dwWindowVLength" Value="垂直长度" />
+        <c:L Key="dwWindowHSpace" Value="水平间距" />
+        <c:L Key="dwWindowVSpace" Value="垂直间距" />
+        <c:L Key="lblZoomScale" Value="缩放比例:" />
+        <c:L Key="btnZoomIn" Value="放大" />
+        <c:L Key="btnZoomOut" Value="缩小" />
+        <c:L Key="lblSettingWindowTitle" Value="设置" />
+        <c:L Key="lblSettingWindowCurrentLanaguage" Value="当前语言:" />
+        <c:L Key="lblSettingWindowDiagramSetting" Value="图表设置" />
+        <c:L Key="lblSettingWindowFontSize" Value="字体大小:" />
+        <c:L Key="lblSettingWindowTextColor" Value="标记文字颜色:" />
+        <c:L Key="lblSettingWindowHighlightTextColor" Value="高亮文字颜色:" />
+        <c:L Key="lblSettingWindowMarkTextColor" Value="数值文字颜色:" />
+        <c:L Key="lblSettingWindowSignalLineColor" Value="信号线颜色:" />
+        <c:L Key="lblSettingWindowHighlightSignalLineColor" Value="高亮信号线颜色:" />
+        <c:L Key="lblSettingWindowMarkLineColor" Value="标记线颜色:" />
+        <c:L Key="btnSettingWindowOk" Value="确定(_O)" />
+        <c:L Key="btnSettingWindowCancel" Value="取消(_C)" />
+        <c:L Key="btnSettingWindowApply" Value="应用(_A)" />
+        <c:L Key="lblSettingWindowDiagramPreviewRemark" Value=">>图示预览" />
+        <c:L Key="lblSettingWindowRestartMessage" Value="修改界面语言需要重启软件才可生效" />
+        <c:L Key="lblSaveBmpFileSuccessfully" Value="保存BMP文件 '{0}' -- 完成" />
+        <c:L Key="lblOpenBmpConfigSuccessfully" Value="打开BMP生成器配置文件 '{0}' -- 完成" />
+        <c:L Key="lblNotFindConfigFile" Value="配置文件 '{0}' 不存在" />
+    </c:Lang>
+</ResourceDictionary>
